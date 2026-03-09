@@ -4,8 +4,8 @@ ENV_FILE = ./srcs/.env
 all: build
 
 build:
-	mkdir -p /home/malapoug/data/wordpress
-	mkdir -p /home/malapoug/data/mariadb
+	sudo mkdir -p /home/malapoug/data/wordpress
+	sudo mkdir -p /home/malapoug/data/mariadb
 	docker compose -f $(COMPOSE_FILE) --env-file $(ENV_FILE) up -d --build
 
 down:
