@@ -39,7 +39,7 @@ cd Inception
 2. Configure your environment and secrets (see [DEV_DOC.md](DEV_DOC.md) for full details):
 
 ```bash
-cp srcs/.env.example srcs/.env
+cp srcs/.env.base srcs/.env
 # Edit srcs/.env with your domain and settings
 ```
 
