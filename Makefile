@@ -25,6 +25,9 @@ re:
 ps:
 	docker compose -f $(COMPOSE_FILE) ps
 
+logs:
+	docker compose -f $(COMPOSE_FILE) --env-file $(ENV_FILE) logs -f
+
 volume-ls:
 	docker volume ls
 
