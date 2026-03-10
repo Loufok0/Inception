@@ -6,7 +6,7 @@ all: build
 build:
 	grep -q "malapoug.42.fr" /etc/hosts || echo "127.0.0.1 malapoug.42.fr" | sudo tee -a /etc/hosts
 	sudo systemctl enable docker
-	sudo service start docker
+	sudo systemctl start docker
 	sudo mkdir -p /home/malapoug/data/wordpress
 	sudo mkdir -p /home/malapoug/data/mariadb
 	docker compose -f $(COMPOSE_FILE) --env-file $(ENV_FILE) up -d --build
