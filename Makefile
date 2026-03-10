@@ -4,9 +4,9 @@ ENV_FILE = ./srcs/.env
 all: build
 
 build:
-	sudo test -e /etc/hosts || sudo echo "127.0.0.1   malapoug.42.fr" >> /etc/hosts;
+	grep -q "malapoug.42.fr" /etc/hosts || echo "127.0.0.1 malapoug.42.fr" | sudo tee -a /etc/hosts
 	sudo systemctl enable docker
-	sudo systemctl start docker
+	sudo service start docker
 	sudo mkdir -p /home/malapoug/data/wordpress
 	sudo mkdir -p /home/malapoug/data/mariadb
 	docker compose -f $(COMPOSE_FILE) --env-file $(ENV_FILE) up -d --build
@@ -34,4 +34,4 @@ logs:
 volume-ls:
 	docker volume ls
 
-.PHONY: all build down clean fclean re remove-data
+.PHONY: all build down clean fclean re ps logs volume-ls
