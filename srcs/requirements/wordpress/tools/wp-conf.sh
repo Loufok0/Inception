@@ -7,7 +7,6 @@ done
 cd /var/www/wordpress
 
 if ! wp core is-installed --allow-root; then
-
 	wp core install \
 		--url="${DOMAIN_NAME}" \
 		--title="${SITE_TITLE}" \
@@ -16,8 +15,9 @@ if ! wp core is-installed --allow-root; then
 		--admin_email="${WP_ADMIN_EMAIL}" \
 		--skip-email \
 		--allow-root
+fi
 
-
+if ! wp user get ${WP_USER} --allow-root > /dev/null 2>&1; then
 	wp user create \
 		${WP_USER} \
 		${WP_USER_EMAIL} \
