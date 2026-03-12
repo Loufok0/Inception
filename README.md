@@ -36,7 +36,7 @@ git clone https://github.com/Loufok0/Inception.git
 cd Inception
 ```
 
-2. Configure your environment and secrets (see [DEV_DOC.md](DEV_DOC.md) for full details):
+2. Configure your environment (see [DEV_DOC.md](DEV_DOC.md) for full details):
 
 ```bash
 cp srcs/.env.base srcs/.env
@@ -71,7 +71,7 @@ make
 
 This project uses Docker to package and isolate each service into its own container. All images are built from custom `Dockerfile`s located in `srcs/requirements/`. No pre-made images are used for the application services — only official base OS image (`debian`).
 
-The `docker-compose.yml` file in `srcs/` defines all services, volumes, networks, and secrets. Environment variables are loaded from a `.env` file.
+The `docker-compose.yml` file in `srcs/` defines all services, volumes, networks. Environment variables are loaded from a `.env` file.
 
 **Included services:**
 - `nginx` — Reverse proxy and TLS termination
@@ -158,6 +158,6 @@ AI (Claude by Anthropic) was used during this project for the following tasks:
 - **Debugging Dockerfile issues** — as learning a new syntaxe/config file I've run into some issue, that I sometimes did not found response online.
 - **Nginx configuration** — same, as learning a new syntax, I sometime had to ask for explanations as I didn't undestand documentation really well.
 - **README and documentation** — made it prettier ✨
-- **Comparisons and explanations** — clarifying Docker concepts (volumes, networks, secrets) for the documentation
+- **Comparisons and explanations** — clarifying Docker concepts (volumes, networks) for the documentation
 
 AI was not used to write the core infrastructure code or Dockerfiles from scratch — all configuration decisions were made and validated manually.
