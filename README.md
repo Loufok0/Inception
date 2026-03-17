@@ -157,7 +157,7 @@ AI (Claude by Anthropic) was used during this project for the following tasks:
 
 - **Debugging Dockerfile issues** — as learning a new syntaxe/config file I've run into some issue, that I sometimes did not found response online.
 - **Nginx configuration** — same, as learning a new syntax, I sometime had to ask for explanations as I didn't undestand documentation really well.
-- **README and documentation** — made it prettier ✨
+- **README and documentation** — made it prettier ✨💖
 - **Comparisons and explanations** — clarifying Docker concepts (volumes, networks) for the documentation
 
 AI was not used to write the core infrastructure code or Dockerfiles from scratch — all configuration decisions were made and validated manually.
